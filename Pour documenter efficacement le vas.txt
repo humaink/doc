@@ -1,0 +1,52 @@
+### Partie 1 : Documentation Générale
+
+#### Introduction
+Le programme est un système de gestion pour un magasin qui permet de gérer les produits, les ventes, les clients et les fournisseurs. Il offre des interfaces distinctes pour les gestionnaires, les clients, et les fournisseurs, permettant à chaque type d'utilisateur d'effectuer des opérations spécifiques.
+
+#### Structure de Données
+Le système utilise plusieurs structures de données pour représenter différents types d'entités :
+
+- **Client** : Contient des informations telles que l'ID, le nom, l'email, le mot de passe, et le nombre d'achats.
+- **Fournisseur** : Stocke l'ID, le nom, le mot de passe, et le nombre de ventes.
+- **Produit** : Inclut l'ID, le nom, une description, le prix, le stock disponible, et le nombre de ventes.
+- **Vente** : Représente une vente avec l'ID, le nom du produit, la quantité, le montant total, et le nom du client associé.
+
+#### Flux de Programme
+- Le programme démarre en demandant à l'utilisateur de sélectionner un rôle (gestionnaire, client ou fournisseur).
+- Selon le rôle sélectionné, l'utilisateur est redirigé vers un menu spécifique qui lui permet d'effectuer des actions pertinentes à son rôle.
+- Des fonctions de gestion de fichiers sont utilisées pour lire et écrire des données dans des fichiers binaires (`*.dat`), permettant la persistance des données entre les sessions.
+
+### Partie 2 : Documentation Détaillée des Fonctions
+
+#### Fonctions Principales
+- **`go_home()`** : Redirige l'utilisateur vers le menu principal selon son rôle.
+- **`home_all()`** : Affiche le menu initial pour choisir le rôle et redirige l'utilisateur en conséquence.
+
+#### Gestion des Produits
+- **`ajouter_produit()`** : Permet à l'utilisateur d'ajouter un nouveau produit en saisissant les détails requis.
+- **`modifier_produit()`** : Permet de modifier les détails d'un produit existant en utilisant son ID.
+- **`supprimer_produit()`** : Supprime un produit du système en utilisant son ID.
+- **`consulter_produit()`** : Affiche les détails d'un produit spécifique.
+
+#### Gestion des Clients
+- **`ajouter_client()`** : Enregistre un nouveau client dans le système.
+- **`modifier_client()`** : Modifie les détails d'un client existant.
+- **`consulter_client()`** : Permet de consulter les détails d'un client spécifique.
+
+#### Gestion des Fournisseurs
+- **`ajouter_fournisseur()`** : Ajoute un nouveau fournisseur.
+- **`modifier_fournisseur()`** : Permet de modifier les informations d'un fournisseur existant.
+- **`consulter_fournisseur()`** : Affiche les informations d'un fournisseur.
+
+#### Transactions
+- **`acheter_produit()`** : Permet aux clients d'acheter des produits.
+- **`historique_ventes()`** : Affiche l'historique des ventes pour un gestionnaire ou un client.
+
+#### Authentification et Sécurité
+- **`check_connected()`** : Vérifie si les identifiants d'un utilisateur correspondent à ceux enregistrés dans le système.
+- **`connexion()`** : Gère le processus de connexion pour les clients et les gestionnaires.
+
+#### Utilitaires
+- **`cleanBuffer()`** : Nettoie le tampon d'entrée pour éviter des erreurs de saisie.
+
+Ce découpage en deux parties aide à comprendre à la fois la structure globale du programme et le détail des fonctionnalités fournies. Cette documentation peut être utilisée pour l'entretien du code, la formation des utilisateurs, et l'extension future du système.
